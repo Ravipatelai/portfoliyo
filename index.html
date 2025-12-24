@@ -23,15 +23,16 @@
       .nav {
         border-radius: 10px;
         display: flex;
-        gap: 10px;
-        padding: 10px;
+        gap: 60px;
+        padding: 15px;
         background: #535151;
         border: 1px solid rgb(38, 39, 39);
         position: fixed;
       }
 
       button {
-        padding: 8px 12px;
+        border-radius: 20%;
+        padding: 20px 15px;
         cursor: pointer;
       }
 
@@ -201,6 +202,106 @@
       }
 
       /* projects */
+
+      /* ---------- GRID LAYOUT ---------- */
+.container{
+    width:100%;
+    max-width:1000px;
+    display:grid;
+    gap:30px;
+    justify-content: center;
+}
+
+/* 1 column mobile */
+@media(max-width:768px){
+    .container{
+        grid-template-columns:1fr;
+    }
+}
+
+/* 3D style grid desktop */
+@media(min-width:769px){
+    .container{
+        grid-template-columns:repeat(2,1fr);
+        transform-style:preserve-3d;
+    }
+}
+
+/* ---------- CARD ---------- */
+.card{
+    
+    border-radius:16px;
+    padding:10px;
+    box-shadow:0 4px 15px rgba(0,0,0,.25);
+    display:flex;
+    justify-content: center;
+    flex-direction:column;
+    gap:10px;
+  
+}
+
+/* video */
+.card video{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+/* title + subtitle */
+.card h2{
+    font-size:25px;
+}
+.card p{
+    font-size:18px;
+    color:gray;
+}
+
+/* tech icons */
+.tech{
+    display:flex;
+    gap:8px;
+    margin-top:5px;
+}
+.tech img{
+    width:28px;
+    height:28px;
+}
+
+/* buttons */
+.btn-box{
+    display:flex;
+    gap:10px;
+    margin-top:10px;
+}
+.btn{
+    flex:1;
+    text-align:center;
+    padding:8px;
+    border-radius:10px;
+    text-decoration:none;
+    font-size:14px;
+    border:1px solid #ddd;
+}
+.live{
+    color:red;
+}
+/* contact pages */
+
+/* mobile default = single column */
+#contact-section{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+/* laptop / tablet = two column */
+@media(min-width:768px){
+  #contact-section{
+    flex-direction:row;
+    justify-content:space-between;
+  }
+}
      
     </style>
   </head>
@@ -318,13 +419,261 @@
       </div>
 
       <h1>Projects I have worked on</h1>
-      <div style="display: grid">
-       
+      <div class="container">
+
+    <!-- ---------- CARD 1 ---------- -->
+    <div class="card">
+
+        <video src="yourvideo.mp4" autoplay loop muted></video>
+
+        <h2>MetMed</h2>
+        <p>Doctor – Patient Appointment Booking Platform</p>
+
+        <div class="tech">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg">
+            <img src="https://www.svgrepo.com/show/374118/tailwind.svg">
+        </div>
+
+        <div class="btn-box">
+            <a class="btn live" href="#">● Live</a>
+            <a class="btn" href="#">GitHub</a>
+        </div>
+
+    </div>
+    <!-- ---------- CARD 2 ---------- -->
+    <div class="card">
+          
+
+        <video src="yourvideo.mp4" autoplay loop muted></video>
+
+        <h2>MetMed</h2>
+        <p>Doctor – Patient Appointment Booking Platform</p>
+
+        <div class="tech">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg">
+            <img src="https://www.svgrepo.com/show/374118/tailwind.svg">
+        </div>
+
+        <div class="btn-box">
+            <a class="btn live" href="#">● Live</a>
+            <a class="btn" href="#">GitHub</a>
+        </div>
+
+    </div>
+<!------------------ card 3 ---------------->
+           <div class="card">
+          
+
+        <video src="yourvideo.mp4" autoplay loop muted></video>
+
+        <h2>MetMed</h2>
+        <p>Doctor – Patient Appointment Booking Platform</p>
+
+        <div class="tech">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg">
+            <img src="https://www.svgrepo.com/show/374118/tailwind.svg">
+        </div>
+
+        <div class="btn-box">
+            <a class="btn live" href="#">● Live</a>
+            <a class="btn" href="#">GitHub</a>
+        </div>
+
+    </div>
+    <!-------------card 4 ------------->
+           <div class="card">
+          
+
+        <video src="yourvideo.mp4" autoplay loop muted></video>
+
+        <h2>MetMed</h2>
+        <p>Doctor – Patient Appointment Booking Platform</p>
+
+        <div class="tech">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg">
+            <img src="https://www.svgrepo.com/show/374118/tailwind.svg">
+        </div>
+
+        <div class="btn-box">
+            <a class="btn live" href="#">● Live</a>
+            <a class="btn" href="#">GitHub</a>
+        </div>
+
+    </div>
+
+    <!-- ---------------CARD 5------- -->
+     <div class="card">
+          
+
+        <video src="yourvideo.mp4" autoplay loop muted></video>
+
+        <h2>MetMed</h2>
+        <p>Doctor – Patient Appointment Booking Platform</p>
+
+        <div class="tech">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg">
+            <img src="https://www.svgrepo.com/show/374118/tailwind.svg">
+        </div>
+
+        <div class="btn-box">
+            <a class="btn live" href="#">● Live</a>
+            <a class="btn" href="#">GitHub</a>
+        </div>
+
+    </div>
+    <!-- ----------CARD 6---------- -->
+
+    <div class="card">
+          
+
+        <video src="yourvideo.mp4" autoplay loop muted></video>
+
+        <h2>MetMed</h2>
+        <p>Doctor – Patient Appointment Booking Platform</p>
+
+        <div class="tech">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg">
+            <img src="https://www.svgrepo.com/show/374118/tailwind.svg">
+        </div>
+
+        <div class="btn-box">
+            <a class="btn live" href="#">● Live</a>
+            <a class="btn" href="#">GitHub</a>
+        </div>
+
+
+
+    </div>
+</div>
         
         
        
       </div>
+
+<br><br>
+      <button
+  style="
+    background-color: rgb(134, 43, 134);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 16px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    margin: 10px auto;
+    cursor: pointer;
+  ">
+  View More Projects →
+</button>
+
+<div>
+
+</div>
+<!-- OUTER BOX -->
+<div 
+style="
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+border:2px dashed gray;
+border-radius:16px;
+padding:20px;
+margin-top:30px;
+width:100%;
+max-width:800px;
+margin-left:auto;
+margin-right:auto;
+">
+
+<!-- SECTION -->
+<section id="contact-section" style="width:100%;">
+
+    <!-- LEFT CONTENT -->
+    <div style="flex:1; text-align:left;">
+        <h2 style="font-size:22px; margin-bottom:6px;">
+            Let's Connect
+        </h2>
+
+        <p style="font-size:14px; color:gray;">
+            Have an idea or want to collaborate?<br>
+            Drop a message and I’ll get back to you soon.
+        </p>
     </div>
+
+    <!-- RIGHT FORM -->
+    <div style="flex:1; width:100%; display:flex; flex-direction:column; align-items:flex-start;">
+
+        <form style="display:flex; flex-direction:column; gap:10px; width:100%; max-width:330px;">
+
+            <input type="text" placeholder="Your name" required
+            style="padding:8px; border-radius:8px; border:1px solid gray;">
+
+            <input type="email" placeholder="Your email" required
+            style="padding:8px; border-radius:8px; border:1px solid gray;">
+
+            <textarea rows="4" placeholder="Your message" required
+            style="padding:8px; border-radius:8px; border:1px solid gray;"></textarea>
+
+            <button type="submit"
+            style="
+            background:rgb(134, 43, 134);
+            color:white;
+            padding:8px;
+            border-radius:8px;
+            border:none;
+            font-weight:bold;
+            cursor:pointer;
+            ">
+            Send
+            </button>
+        </form>
+
+        <span style="font-size:12px; color:gray; margin-top:10px;">
+            rkge6331@gmail.com
+        </span>
+
+    </div>
+
+</section>
+</div>
+
+
+<!-- fooetr -->
+<br>
+<br>
+<hr>
+<div style="
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 16px;
+    color: rgb(86, 82, 82);
+    border: none;
+    border-radius: 8px;
+    margin: 10px auto;
+    cursor: pointer;
+  ">
+  C 2025 | Ravikant Kuamr | All rights reseved.
+</div>
+    </div>
+    <br><br><br><br>
+    <br><br>
+    <br>
   </body>
   <script>
     const button = document.getElementById("toggleButton");
