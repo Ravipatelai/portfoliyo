@@ -4,337 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Responsive Buttons</title>
-
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        background-color: black;
-        color: white;
-        transition: 0.6s;
-      }
-      html{
-  scroll-behavior:smooth;
-}
-
-      /* correct class */
-      .dark-mode {
-        background-color: white;
-        color: black;
-      }
-
-      .nav {
-        border-radius: 10px;
-        display: flex;
-        gap: 60px;
-        padding: 15px;
-        background: #535151;
-        border: 1px solid rgb(38, 39, 39);
-        position: fixed;
-      }
-
-      button {
-        border-radius: 20%;
-        padding: 20px 15px;
-        cursor: pointer;
-      }
-
-      .nav {
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        justify-content: center;
-      }
-
-      @media (min-width: 768px) {
-        .nav {
-          top: 50%;
-          left: 30px;
-          bottom: auto;
-          transform: translateY(-50%);
-          flex-direction: column;
-          align-items: flex-start;
-        }
-      }
-      /* curser color random change */
-      .dot {
-        position: absolute;
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        pointer-events: none;
-        animation: fade 1s linear forwards;
-      }
-
-      @keyframes fade {
-        to {
-          opacity: 0;
-          transform: scale(3);
-        }
-      }
-      /* home */
-      .h-box {
-        justify-content: space-around;
-        display: flex;
-        width: 70%;
-        margin: 15px 20% 0px 15%;
-        background-color: rgb(75, 72, 72);
-        padding: 10px;
-        border-radius: 10px;
-      }
-      .profile {
-      }
-      .p-data {
-        display: flex;
-        color: #b7b0b0;
-        gap: 30px;
-      }
-      .image {
-        margin-top: 70px;
-      }
-      .cursor {
-        animation: blink 1s infinite;
-      }
-      #text {
-        color: #ea0c0c;
-      }
-
-      @keyframes blink {
-        0%,
-        50%,
-        100% {
-          opacity: 1;
-        }
-        25%,
-        75% {
-          opacity: 0;
-        }
-      }
-
-      /* about me */
-      .about {
-        width: 70%;
-        margin: 15px 20% 0px 15%;
-      }
-      h1,
-      h2 {
-        /* text-decoration:5px underline blue; */
-      }
-
-      a {
-        color: #8be4ff;
-      }
-
-      /* GitHub Activity card */
-      .card {
-        background: #0f0f0f;
-        padding: 25px;
-        border-radius: 12px;
-        border: 1px solid #1f1f1f;
-        margin-top: 10px;
-      }
-      /* internship */
-      .contner {
-        display: flex;
-        justify-content: space-between;
-
-        align-items: center;
-      }
-
-      /* image movement  */
-      /* Center Image */
-      .center-img {
-        /* z-index:2; */
-      }
-
-      .center-img img {
-        width: 200px;
-        border-radius: 10px;
-      }
-
-      /* Marquee wrapper */
-      .marquee {
-        width: 100%;
-        overflow: hidden;
-      }
-
-      .row1 {
-        bottom: 18%;
-      }
-      .row2 {
-        bottom: 8%;
-      }
-
-      .track {
-        display: flex;
-        width: max-content;
-        gap: 0;
-      }
-
-      .track img {
-        width: 120px;
-        flex-shrink: 0;
-      }
-
-      /* Left ➡ Right */
-      .left-to-right {
-        animation: ltr 20s linear infinite;
-      }
-
-      /* Right ➡ Left */
-      .right-to-left {
-        animation: rtl 20s linear infinite;
-      }
-
-      @keyframes ltr {
-        from {
-          transform: translateX(-50%);
-        }
-        to {
-          transform: translateX(0);
-        }
-      }
-
-      @keyframes rtl {
-        from {
-          transform: translateX(0);
-        }
-        to {
-          transform: translateX(-50%);
-        }
-      }
-
-      /* projects */
-
-      /* ---------- GRID LAYOUT ---------- */
-.container{
-    width:100%;
-    max-width:1000px;
-    margin:0 auto;
-    display:grid;
-    gap:30px;
-    
-    /* IMPORTANT – should be COLUMNS not rows */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-/* 1 column mobile */
-@media(max-width:768px){
-    .container{
-        grid-template-columns:1fr;
-    }
-}
-
-/* 3D style grid desktop */
-@media(min-width:769px){
-    .container{
-        grid-template-columns:repeat(2,1fr);
-        transform-style:preserve-3d;
-    }
-}
-
-/* ---------- CARD ---------- */
-.card{
-    border-radius:16px;
-    padding:10px;
-    box-shadow:0 4px 15px rgba(0,0,0,.25);
-    display:flex;
-    justify-content:center;
-    flex-direction:column;
-    gap:10px;
-}
-
-.card video{
-    width:100%;
-    height:180px;
-    object-fit:cover;
-    border-radius:12px;
-}
-
-.card h2{
-    font-size:25px;
-}
-
-.card p{
-    font-size:18px;
-    color:gray;
-}
-
-/* tech icons */
-.tech{
-    display:flex;
-    gap:8px;
-    margin-top:5px;
-}
-.tech img{
-    width:28px;
-    height:28px;
-}
-
-/* buttons */
-.btn-box{
-    display:flex;
-    gap:10px;
-    margin-top:10px;
-}
-.btn{
-    flex:1;
-    text-align:center;
-    padding:8px;
-    border-radius:10px;
-    text-decoration:none;
-    font-size:14px;
-    border:1px solid #ddd;
-}
-.live{
-    color:red;
-}
-
-/* contact section responsive */
-#contact-section{
-  display:flex;
-  flex-direction:column;
-  gap:30px;
-}
-
-@media(min-width:768px){
-  #contact-section{
-    flex-direction:row;
-    justify-content:space-evenly;
-  }
-}
-/* profile images */
-.image{
-  margin-top: 0px;
-  display: flex;
-  flex-direction: column;
-}
-     .image #pro{
-      border-radius: 50%;
-       width:120px;
-  height:120px;
-     }
-     .image #pro1{
-     
-      height: 40px;
-      width: 40px;
-     }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
     <div class="nav">
-      <button onclick="document.getElementById('home').scrollIntoView({behavior:'smooth'})">🏠</button>
+      <button
+        onclick="document.getElementById('home').scrollIntoView({behavior:'smooth'})"
+      >
+        🏠
+      </button>
 
-      <button onclick="document.getElementById('Experience').scrollIntoView({behavior:'smooth'})">💼</button>
+      <button
+        onclick="document.getElementById('Experience').scrollIntoView({behavior:'smooth'})"
+      >
+        💼
+      </button>
 
-       <button onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">👨‍💻</button>
+      <button
+        onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})"
+      >
+        👨‍💻
+      </button>
 
-  <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">📞</button>
+      <button
+        onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
+      >
+        📞
+      </button>
 
- 
-
-  <button id="toggleButton"></button>
+      <button id="toggleButton">☀️</button>
     </div>
 
     <!-- home box -->
@@ -344,11 +43,24 @@
         <div><span id="text"></span><span class="cursor">|</span></div>
         <div class="p-data">Email Id :- rkpg6331@gmail.com</div>
         <div class="p-data">Location :- Aurangabad, bihar</div>
-        <div class="p-data">lingdin :- ravikant</div>
-        <div class="p-data">Resume downlod</div>
-        <div style="gap: 20px">Dedicated. Adaptable. Curious.</div>
+        <div class="p-data">
+          <a href="https://www.linkedin.com/in/ravikantkumarai/"
+            >lingdin :- ravikant</a
+          >
+        </div>
+        <div class="p-data">
+          <a
+            href="https://drive.google.com/file/d/1L3By0AUhnHuU7Zw0tr_Yj9ZETixf44yR/view?usp=drive_link"
+            >Resume downlod</a
+          >
+        </div>
+        <div style="padding-top: 10px">Dedicated. Adaptable. Curious.</div>
       </div>
-      <div class="image"><img id="pro1" src="hart.png" alt="image"><img id="pro"  src="ravipatel.jpg" alt="Profile"></div>
+      <div class="image">
+        <a href="https://github.com/Ravipatelai" target="_self"
+          ><img id="pro1" src="github.png" alt="image" /></a
+        ><img id="pro" src="ravipatel.jpg" alt="Profile" />
+      </div>
     </div>
     <!-- about me  -->
 
@@ -357,8 +69,8 @@
 
       <p>
         Ravikant is a <b>2026 Computer Science Engineering graduate</b> from
-        <b>RNTU, Bhopal</b>. During his internship at <b>WhatBytes</b>, he built
-        user-friendly, responsive, and SEO optimized pages using
+        <b>RNTU, Bhopal</b>. During his internship at <b>OASIS INFOBYTE</b>, he
+        built user-friendly, responsive, and SEO optimized pages using
         <b>Next.js</b> and <b>Tailwind CSS</b>.
       </p>
 
@@ -385,14 +97,14 @@
       <div class="contner">
         <div>
           <div>
-            <h2>
-              <img src="" alt="image" /> finfobyot
+            <h3>
+              OASIS INFOBYTE
               <select name="" id=""></select>
-            </h2>
+            </h3>
             <p>fronted doveloper</p>
           </div>
         </div>
-        <div>2025 - 2026</div>
+        <div>Jun 2025</div>
       </div>
       <ul>
         <li>
@@ -404,361 +116,361 @@
           responsiveness.
         </li>
       </ul>
-
+      <br /><br /><br />
       <!-- Row 1 : Left to Right -->
       <div class="marquee row1">
         <div class="track left-to-right">
-          <!-- Original -->
-         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
-         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
-         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
-         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
-         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
-         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+            alt=""
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+            alt=""
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+            alt=""
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+            alt=""
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+            alt=""
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+            alt=""
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+            alt=""
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+            alt=""
+          />
+
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+            alt=""
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+            alt=""
+          />
+          <!-- duplicate images -->
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+            alt=""
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+            alt=""
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+            alt=""
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+            alt=""
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+            alt=""
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+            alt=""
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+            alt=""
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+            alt=""
+          />
+
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+            alt=""
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+            alt=""
+          />
         </div>
       </div>
-
+      <br />
       <!-- Row 2 : Right to Left -->
       <div class="marquee row2">
         <div class="track right-to-left">
-          <!-- Original -->
-           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
-           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
-           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
-           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
-           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
-           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
-           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
-         
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+            alt=""
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+            alt=""
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
+            alt=""
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+            alt=""
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg"
+            alt=""
+          />
+          <!-- duplicate image  -->
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+            alt=""
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+            alt=""
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
+            alt=""
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+            alt=""
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg"
+            alt=""
+          />
         </div>
       </div>
+      <br /><br /><br />
 
       <h1 id="projects">Projects I have worked on</h1>
       <div class="container">
+        <!-- ---------- CARD 1 ---------- -->
+        <div class="card">
+          <video src="yourvideo.mp4" autoplay loop muted></video>
 
-    <!-- ---------- CARD 1 ---------- -->
-    <div class="card">
+          <h2>MetMed</h2>
+          <p>Doctor – Patient Appointment Booking Platform</p>
 
-        <video src="yourvideo.mp4" autoplay loop muted></video>
+          <div class="tech">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+            />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+            />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+            />
+            <img src="https://www.svgrepo.com/show/374118/tailwind.svg" />
+          </div>
 
-        <h2>MetMed</h2>
-        <p>Doctor – Patient Appointment Booking Platform</p>
-
-        <div class="tech">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg">
-            <img src="https://www.svgrepo.com/show/374118/tailwind.svg">
-        </div>
-
-        <div class="btn-box">
+          <div class="btn-box">
             <a class="btn live" href="#">● Live</a>
             <a class="btn" href="#">GitHub</a>
+          </div>
         </div>
-
-    </div>
-    <!-- ---------- CARD 2 ---------- -->
-    <div class="card">
-          
-
-        <video src="yourvideo.mp4" autoplay loop muted></video>
-
-        <h2>MetMed</h2>
-        <p>Doctor – Patient Appointment Booking Platform</p>
-
-        <div class="tech">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg">
-            <img src="https://www.svgrepo.com/show/374118/tailwind.svg">
-        </div>
-
-        <div class="btn-box">
-            <a class="btn live" href="#">● Live</a>
-            <a class="btn" href="#">GitHub</a>
-        </div>
-
-    </div>
-<!------------------ card 3 ---------------->
-           <div class="card">
-          
-
-        <video src="yourvideo.mp4" autoplay loop muted></video>
-
-        <h2>MetMed</h2>
-        <p>Doctor – Patient Appointment Booking Platform</p>
-
-        <div class="tech">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg">
-            <img src="https://www.svgrepo.com/show/374118/tailwind.svg">
-        </div>
-
-        <div class="btn-box">
-            <a class="btn live" href="#">● Live</a>
-            <a class="btn" href="#">GitHub</a>
-        </div>
-
-    </div>
-    <!-------------card 4 ------------->
-           <div class="card">
-          
-
-        <video src="yourvideo.mp4" autoplay loop muted></video>
-
-        <h2>MetMed</h2>
-        <p>Doctor – Patient Appointment Booking Platform</p>
-
-        <div class="tech">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg">
-            <img src="https://www.svgrepo.com/show/374118/tailwind.svg">
-        </div>
-
-        <div class="btn-box">
-            <a class="btn live" href="#">● Live</a>
-            <a class="btn" href="#">GitHub</a>
-        </div>
-
-    </div>
-
-    <!-- ---------------CARD 5------- -->
-     <div class="card">
-          
-
-        <video src="yourvideo.mp4" autoplay loop muted></video>
-
-        <h2>MetMed</h2>
-        <p>Doctor – Patient Appointment Booking Platform</p>
-
-        <div class="tech">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg">
-            <img src="https://www.svgrepo.com/show/374118/tailwind.svg">
-        </div>
-
-        <div class="btn-box">
-            <a class="btn live" href="#">● Live</a>
-            <a class="btn" href="#">GitHub</a>
-        </div>
-
-    </div>
-    <!-- ----------CARD 6---------- -->
-
-    <div class="card">
-          
-
-        <video src="yourvideo.mp4" autoplay loop muted></video>
-
-        <h2>MetMed</h2>
-        <p>Doctor – Patient Appointment Booking Platform</p>
-
-        <div class="tech">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg">
-            <img src="https://www.svgrepo.com/show/374118/tailwind.svg">
-        </div>
-
-        <div class="btn-box">
-            <a class="btn live" href="#">● Live</a>
-            <a class="btn" href="#">GitHub</a>
-        </div>
-
-
-
-    </div>
-</div>
+        <!-- ---------- CARD 2 ---------- -->
         
+        <!------------------ card 3 ---------------->
         
-       
+        <!-------------card 4 ------------->
+        <div class="card">
+          <video src="yourvideo.mp4" autoplay loop muted></video>
+
+          <h2>MetMed</h2>
+          <p>Doctor – Patient Appointment Booking Platform</p>
+
+          <div class="tech">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+            />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+            />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+            />
+            <img src="https://www.svgrepo.com/show/374118/tailwind.svg" />
+          </div>
+
+          <div class="btn-box">
+            <a class="btn live" href="#">● Live</a>
+            <a class="btn" href="#">GitHub</a>
+          </div>
+        </div>
+
+        <!-- ---------------CARD 5------- -->
+        <div class="card">
+          <video src="yourvideo.mp4" autoplay loop muted></video>
+
+          <h2>MetMed</h2>
+          <p>Doctor – Patient Appointment Booking Platform</p>
+
+          <div class="tech">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+            />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+            />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+            />
+            <img src="https://www.svgrepo.com/show/374118/tailwind.svg" />
+          </div>
+
+          <div class="btn-box">
+            <a class="btn live" href="#">● Live</a>
+            <a class="btn" href="#">GitHub</a>
+          </div>
+        </div>
+        <!-- ----------CARD 6---------- -->
+
+        <div class="card">
+          <video src="yourvideo.mp4" autoplay loop muted></video>
+
+          <h2>MetMed</h2>
+          <p>Doctor – Patient Appointment Booking Platform</p>
+
+          <div class="tech">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+            />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+            />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+            />
+            <img src="https://www.svgrepo.com/show/374118/tailwind.svg" />
+          </div>
+
+          <div class="btn-box">
+            <a class="btn live" href="#">● Live</a>
+            <a class="btn" href="#">GitHub</a>
+          </div>
+        </div>
       </div>
+    </div>
 
-<br><br>
-      <button
-  style="
-    background-color: rgb(134, 43, 134);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 16px;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    margin: 10px auto;
-    cursor: pointer;
-  ">
-  View More Projects →
-</button>
+    <br /><br />
+    <button id="more">
+      <a href="https://github.com/Ravipatelai">View More Projects →</a>
+    </button>
 
-<div id="contact">
+    <div id="contact"></div>
+    <!-- OUTER BOX -->
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 2px dashed gray;
+        border-radius: 16px;
+        padding: 20px;
+        margin-top: 30px;
+        width: 100%;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      "
+    >
+      <!-- SECTION -->
+      <section id="contact-section" style="width: 100%">
+        <!-- LEFT CONTENT -->
+        <div style="flex: 1; text-align: left">
+          <h2 style="font-size: 22px; margin-bottom: 6px">Let's Connect</h2>
 
-</div>
-<!-- OUTER BOX -->
-<div 
-style="
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-border:2px dashed gray;
-border-radius:16px;
-padding:20px;
-margin-top:30px;
-width:100%;
-max-width:800px;
-margin-left:auto;
-margin-right:auto;
-">
-
-<!-- SECTION -->
-<section id="contact-section" style="width:100%;">
-
-    <!-- LEFT CONTENT -->
-    <div style="flex:1; text-align:left;">
-        <h2 style="font-size:22px; margin-bottom:6px;">
-            Let's Connect
-        </h2>
-
-        <p style="font-size:14px; color:gray;">
-            Have an idea or want to collaborate?<br>
+          <p style="font-size: 14px; color: gray">
+            Have an idea or want to collaborate?<br />
             Drop a message and I’ll get back to you soon.
-        </p>
-    </div>
+          </p>
+        </div>
 
-    <!-- RIGHT FORM -->
-    <div style="flex:1; width:100%; display:flex; flex-direction:column; align-items:flex-start;">
-
-        <form style="display:flex; flex-direction:column; gap:10px; width:100%; max-width:330px;">
-
-            <input type="text" placeholder="Your name" required
-            style="padding:8px; border-radius:8px; border:1px solid gray;">
-
-            <input type="email" placeholder="Your email" required
-            style="padding:8px; border-radius:8px; border:1px solid gray;">
-
-            <textarea rows="4" placeholder="Your message" required
-            style="padding:8px; border-radius:8px; border:1px solid gray;"></textarea>
-
-            <button type="submit"
+        <!-- RIGHT FORM -->
+        <div
+          style="
+            flex: 1;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+          "
+        >
+          <form
             style="
-            background:rgb(134, 43, 134);
-            color:white;
-            padding:8px;
-            border-radius:8px;
-            border:none;
-            font-weight:bold;
-            cursor:pointer;
-            ">
-            Send
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              width: 100%;
+              max-width: 330px;
+            "
+          >
+            <input
+              type="text"
+              placeholder="Your name"
+              required
+              style="padding: 8px; border-radius: 8px; border: 1px solid gray"
+            />
+
+            <input
+              type="email"
+              placeholder="Your email"
+              required
+              style="padding: 8px; border-radius: 8px; border: 1px solid gray"
+            />
+
+            <textarea
+              rows="4"
+              placeholder="Your message"
+              required
+              style="padding: 8px; border-radius: 8px; border: 1px solid gray"
+            ></textarea>
+
+            <button
+              type="submit"
+              style="
+                background: rgb(134, 43, 134);
+                color: white;
+                padding: 8px;
+                border-radius: 8px;
+                border: none;
+                font-weight: bold;
+                cursor: pointer;
+              "
+            >
+              Send
             </button>
-        </form>
+          </form>
 
-        <span style="font-size:12px; color:gray; margin-top:10px;">
+          <span style="font-size: 12px; color: gray; margin-top: 10px">
             rkge6331@gmail.com
-        </span>
-
+          </span>
+        </div>
+      </section>
     </div>
 
-</section>
-</div>
-
-
-<!-- fooetr -->
-<br>
-<br>
-<hr>
-<div style="
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 16px;
-    color: rgb(86, 82, 82);
-    border: none;
-    border-radius: 8px;
-    margin: 10px auto;
-    cursor: pointer;
-  ">
-  C 2025 | Ravikant Kuamr | All rights reseved.
-</div>
-    </div>
-    <br><br><br><br>
-    <br><br>
-    <br>
+    <!-- fooetr -->
+    <br />
+    <br />
+    <hr />
+    <div id="footer1">C 2025 | Ravikant Kuamr | All rights reseved.</div>
+    <br /><br /><br /><br />
+    <br /><br />
+    <br />
   </body>
-  <script>
-    const button = document.getElementById("toggleButton");
-
-    button.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-
-      if (document.body.classList.contains("dark-mode")) {
-        button.textContent = "🌙";
-      } else {
-        button.textContent = "☀️";
-      }
-    });
-  </script>
-  <!-- Typing text -->
-  <script>
-    const texts = [
-      "MERN Stack doveloper",
-      "AI & ML learner",
-      "Frontend Designer",
-      "Python Doveloper",
-    ];
-
-    let textIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-
-    function typeEffect() {
-      const currentText = texts[textIndex];
-      const display = document.getElementById("text");
-
-      if (!isDeleting) {
-        display.textContent = currentText.substring(0, charIndex + 1);
-        charIndex++;
-
-        if (charIndex === currentText.length) {
-          setTimeout(() => (isDeleting = true), 1000);
-        }
-      } else {
-        display.textContent = currentText.substring(0, charIndex - 1);
-        charIndex--;
-
-        if (charIndex === 0) {
-          isDeleting = false;
-          textIndex = (textIndex + 1) % texts.length;
-        }
-      }
-    }
-
-    setInterval(typeEffect, 150);
-  </script>
-  <script>
-    // curser color random change
-    document.addEventListener("mousemove", (e) => {
-      const dot = document.createElement("div");
-      dot.classList.add("dot");
-
-      dot.style.left = e.pageX + "px";
-      dot.style.top = e.pageY + "px";
-
-      // Random color
-      dot.style.backgroundColor = `hsl(${Math.random() * 360},100%,50%)`;
-
-      document.body.appendChild(dot);
-
-      // Remove after animation
-      setTimeout(() => {
-        dot.remove();
-      }, 1000);
-    });
-  </script>
+  <script src="javascript.js"></script>
 </html>
