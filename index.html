@@ -13,6 +13,9 @@
         color: white;
         transition: 0.6s;
       }
+      html{
+  scroll-behavior:smooth;
+}
 
       /* correct class */
       .dark-mode {
@@ -75,7 +78,7 @@
         display: flex;
         width: 70%;
         margin: 15px 20% 0px 15%;
-        background-color: rgb(80, 76, 76);
+        background-color: rgb(75, 72, 72);
         padding: 10px;
         border-radius: 10px;
       }
@@ -87,7 +90,7 @@
         gap: 30px;
       }
       .image {
-        margin-top: 50px;
+        margin-top: 70px;
       }
       .cursor {
         animation: blink 1s infinite;
@@ -207,9 +210,12 @@
 .container{
     width:100%;
     max-width:1000px;
+    margin:0 auto;
     display:grid;
     gap:30px;
-    justify-content: center;
+    
+    /* IMPORTANT – should be COLUMNS not rows */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 /* 1 column mobile */
@@ -229,18 +235,15 @@
 
 /* ---------- CARD ---------- */
 .card{
-    
     border-radius:16px;
     padding:10px;
     box-shadow:0 4px 15px rgba(0,0,0,.25);
     display:flex;
-    justify-content: center;
+    justify-content:center;
     flex-direction:column;
     gap:10px;
-  
 }
 
-/* video */
 .card video{
     width:100%;
     height:180px;
@@ -248,10 +251,10 @@
     border-radius:12px;
 }
 
-/* title + subtitle */
 .card h2{
     font-size:25px;
 }
+
 .card p{
     font-size:18px;
     color:gray;
@@ -286,36 +289,56 @@
 .live{
     color:red;
 }
-/* contact pages */
 
-/* mobile default = single column */
+/* contact section responsive */
 #contact-section{
   display:flex;
   flex-direction:column;
-  gap:20px;
+  gap:30px;
 }
 
-/* laptop / tablet = two column */
 @media(min-width:768px){
   #contact-section{
     flex-direction:row;
-    justify-content:space-between;
+    justify-content:space-evenly;
   }
 }
+/* profile images */
+.image{
+  margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+}
+     .image #pro{
+      border-radius: 50%;
+       width:120px;
+  height:120px;
+     }
+     .image #pro1{
      
+      height: 40px;
+      width: 40px;
+     }
     </style>
   </head>
 
   <body>
     <div class="nav">
-      <button>🏠</button>
-      <button>📞</button>
-      <button>📂</button>
-      <button id="toggleButton">🌙</button>
+      <button onclick="document.getElementById('home').scrollIntoView({behavior:'smooth'})">🏠</button>
+
+      <button onclick="document.getElementById('Experience').scrollIntoView({behavior:'smooth'})">💼</button>
+
+       <button onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">👨‍💻</button>
+
+  <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">📞</button>
+
+ 
+
+  <button id="toggleButton"></button>
     </div>
 
     <!-- home box -->
-    <div class="h-box">
+    <div id="home" class="h-box">
       <div class="profile">
         <h1>Ravikant Kumar</h1>
         <div><span id="text"></span><span class="cursor">|</span></div>
@@ -325,11 +348,11 @@
         <div class="p-data">Resume downlod</div>
         <div style="gap: 20px">Dedicated. Adaptable. Curious.</div>
       </div>
-      <div class="image">image</div>
+      <div class="image"><img id="pro1" src="hart.png" alt="image"><img id="pro"  src="ravipatel.jpg" alt="Profile"></div>
     </div>
     <!-- about me  -->
 
-    <div class="about">
+    <div id="about" class="about">
       <h1>Hi, I'm Ravikant 👋</h1>
 
       <p>
@@ -358,7 +381,7 @@
         </iframe>
       </div>
 
-      <h1>Experience</h1>
+      <h1 id="Experience">Experience</h1>
       <div class="contner">
         <div>
           <div>
@@ -386,17 +409,13 @@
       <div class="marquee row1">
         <div class="track left-to-right">
           <!-- Original -->
-          <img src="https://via.placeholder.com/150" />
-          <img src="https://via.placeholder.com/150" />
-          <img src="https://via.placeholder.com/150" />
-          <img src="https://via.placeholder.com/150" />
-          <img src="https://via.placeholder.com/150" />
-          <!-- Clone -->
-          <img src="https://via.placeholder.com/150" />
-          <img src="https://via.placeholder.com/150" />
-          <img src="https://via.placeholder.com/150" />
-          <img src="https://via.placeholder.com/150" />
-          <img src="https://via.placeholder.com/150" />
+         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
         </div>
       </div>
 
@@ -404,21 +423,18 @@
       <div class="marquee row2">
         <div class="track right-to-left">
           <!-- Original -->
-          <img src="https://via.placeholder.com/150" />
-          <img src="https://via.placeholder.com/150" />
-          <img src="https://via.placeholder.com/150" />
-          <img src="https://via.placeholder.com/150" />
-          <img src="https://via.placeholder.com/150" />
-          <!-- Clone -->
-          <img src="https://via.placeholder.com/150" />
-          <img src="https://via.placeholder.com/150" />
-          <img src="https://via.placeholder.com/150" />
-          <img src="https://via.placeholder.com/150" />
-          <img src="https://via.placeholder.com/150" />
+           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+         
         </div>
       </div>
 
-      <h1>Projects I have worked on</h1>
+      <h1 id="projects">Projects I have worked on</h1>
       <div class="container">
 
     <!-- ---------- CARD 1 ---------- -->
@@ -579,7 +595,7 @@
   View More Projects →
 </button>
 
-<div>
+<div id="contact">
 
 </div>
 <!-- OUTER BOX -->
@@ -682,9 +698,9 @@ margin-right:auto;
       document.body.classList.toggle("dark-mode");
 
       if (document.body.classList.contains("dark-mode")) {
-        button.textContent = "☀️";
-      } else {
         button.textContent = "🌙";
+      } else {
+        button.textContent = "☀️";
       }
     });
   </script>
