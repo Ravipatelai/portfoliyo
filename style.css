@@ -20,11 +20,10 @@ html {
   display: flex;
   gap: 20px;
   padding: 15px;
-  background: #535151;
+  background: #18181b;
   border: 1px solid rgb(38, 39, 39);
   position: fixed;
   z-index: 99;
-
 }
 
 button {
@@ -38,7 +37,6 @@ button {
   left: 50%;
   transform: translateX(-50%);
   justify-content: center;
-
 }
 
 @media (min-width: 768px) {
@@ -84,6 +82,10 @@ button {
   gap: 30px;
   padding-top: 6px;
 }
+.p-data a{
+    text-decoration: none;
+    color: #b7b0b0;
+}
 .image {
   margin-top: 70px;
 }
@@ -91,7 +93,7 @@ button {
   animation: blink 1s infinite;
 }
 #text {
-  color: #ea0c0c;
+  color: #bf58e7;
 }
 
 @keyframes blink {
@@ -332,28 +334,40 @@ img:hover {
   border-radius: 8px;
   margin: 10px auto;
   cursor: pointer;
-  
 }
-#more:hover{
-    height: 40px;
-    background-color: green;
+#more:hover {
+  height: 40px;
+  background-color: green;
 }
-#more a{
-    text-decoration: none;
-    color: white;
+#more a {
+  text-decoration: none;
+  color: white;
 }
 
 /* contact */
-
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed gray;
+  border-radius: 16px;
+  padding: 20px;
+  margin-top: 30px;
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
 /* footer1 */
-#footer1{
-     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 16px;
-    color: rgb(86, 82, 82);
-    border: none;
-    border-radius: 8px;
-    margin: 10px auto;
-    cursor: pointer;
+#footer1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 16px;
+  color: rgb(86, 82, 82);
+  border: none;
+  border-radius: 8px;
+  margin: 10px auto;
+  cursor: pointer;
 }
